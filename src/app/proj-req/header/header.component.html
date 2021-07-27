@@ -1,0 +1,39 @@
+<mat-menu [xPosition]="'before'" #menu="matMenu">
+  <button *ngFor="let item of matMenuItems" mat-menu-item>
+    <mat-icon>{{ item.icon }}</mat-icon>
+    <span>{{ item.title }}</span>
+  </button>
+</mat-menu>
+
+<div class="header">
+  <h1 class="header__main">{{ projectRequest.name }}</h1>
+  <h2 class="header__sub">
+    <span class="header__sub__email">{{ projectRequest.email }}</span>
+    <span class="header__sub__phone"
+      ><mat-icon class="header__sub__phone__icon" [inline]="'true'">phone</mat-icon
+      >{{ projectRequest.phone }}</span
+    >
+  </h2>
+  <p class="header__date">
+    <span class="header__date__main">
+      <mat-icon class="header__date__main__icon" [inline]="'true'">date_range</mat-icon>
+      {{ projectRequest.createdAt | date: 'MMM dd, yyyy' }}</span
+    >
+    <span class="header__date__time">
+      <mat-icon class="header__date__time__icon" [inline]="'true'">access_time </mat-icon>
+      {{ projectRequest.createdAt | date: 'h:mma' }}
+    </span>
+    <span class="header__date__relative-time">
+      ( {{ getRelativeTime(projectRequest.createdAt) }} )
+    </span>
+    <span class="menu">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+    </span>
+  </p>
+</div>

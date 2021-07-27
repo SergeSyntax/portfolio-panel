@@ -1,0 +1,32 @@
+.container {
+  // flex: 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  > * {
+    overflow-y: auto;
+    border-right: 0.15rem solid black;
+    height: 100%;
+    max-height: 100%;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      height: 12px;
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(253, 253, 253);
+      border-radius: 10rem;
+    }
+  }
+
+  &__menu {
+    max-width: 30rem;
+  }
+}

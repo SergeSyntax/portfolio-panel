@@ -1,0 +1,14 @@
+<proj-req-not-found *ngIf="failed"></proj-req-not-found>
+<proj-req-loading-doc *ngIf="loading"></proj-req-loading-doc>
+<div *ngIf="!loading && !failed"
+     class="document">
+  <proj-req-header [projectRequest]="profitProjReq"></proj-req-header>
+  <div class="document__content">
+    <proj-req-section [title]="'about'"
+                          [data]="profitProjReq.about"></proj-req-section>
+  </div>
+
+  <proj-req-attachments [attachments]="attachments"></proj-req-attachments>
+  <proj-req-indications [isFunded]="profitProjReq.isFunded"
+                            [communityOrProfit]="profitProjReq.communityOrProfit"></proj-req-indications>
+</div>

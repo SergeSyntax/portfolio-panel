@@ -1,0 +1,23 @@
+<div class="indications">
+  <h3 class="indications__header">indications<mat-divider></mat-divider></h3>
+  <div class="indications__content">
+    <div class="indication">
+      <mat-icon
+        class="indication__icon"
+        [ngClass]="{ unfunded: !isFunded, funded: isFunded }"
+        [inline]="'true'"
+        >{{ isFunded ? 'check' : 'close' }}</mat-icon
+      >
+
+      <div class="indication__text">
+        {{ isFunded ? 'funded' : 'unfunded' }}
+      </div>
+    </div>
+
+    <div class="indication">
+      <mat-icon class="indication__icon" [inline]="'true'"> alt_route </mat-icon>
+      <div class="indication__text">{{ communityOrProfit }} oriented</div>
+    </div>
+  </div>
+</div>
+<span class="website__link__url"> </span>

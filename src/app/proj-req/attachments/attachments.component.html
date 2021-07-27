@@ -1,0 +1,21 @@
+<div class="attachments"
+     *ngIf="attachments.length">
+  <h3 class="attachments__header">Attachments<mat-divider></mat-divider>
+  </h3>
+  <div class="attachments__content">
+    <div *ngFor="let attachment of attachments"
+         class="website"
+         matRipple>
+      <mat-icon class="website__icon"
+                [inline]="'true'">link</mat-icon>
+      <a [href]="attachment.address"
+         target="_blank"
+         class="website__link">
+        <span class="website__link__title">{{ attachment.title }}</span>
+        <span class="website__link__url">
+          {{ this.extractSubDomain(attachment.address) }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

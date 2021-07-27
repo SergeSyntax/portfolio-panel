@@ -13,11 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    SidebarComponent,
-    ToolbarComponent
-  ],
+  declarations: [DashboardComponent, SidebarComponent, ToolbarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

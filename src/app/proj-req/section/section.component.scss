@@ -1,0 +1,15 @@
+.section {
+  &__header {
+    margin-bottom: 1.6rem;
+    font-size: 1.28rem;
+    font-weight: 500;
+    letter-spacing: 0.08rem;
+    text-transform: capitalize;
+  }
+  &__content {
+    margin-bottom: 4rem;
+    font-size: 1.408rem;
+    font-weight: 400;
+    line-height: 1.43;
+  }
+}

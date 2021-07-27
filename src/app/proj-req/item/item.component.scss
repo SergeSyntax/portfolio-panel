@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  font-size: 1.28rem;
+  padding: 1.28rem 1.6rem;
+  border-bottom: 0.24rem solid black;
+  // border-left: #008013 solid 0.26rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  * {
+    &::selection {
+      background: transparent;
+    }
+  }
+
+  &:hover {
+    background: rgba(white, 0.1);
+  }
+
+  .first-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .avatar {
+      font-family: 'Syne Mono', monospace;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #58a564;
+      min-height: 3.2rem;
+      min-width: 3.2rem;
+      padding: 0.72rem;
+      border-radius: 100%;
+      margin-right: 0.96rem;
+      font-size: 1.28rem;
+      letter-spacing: 0.048rem;
+      text-transform: uppercase;
+    }
+  }
+  .second-col {
+    margin-right: auto;
+    .title,
+    .name {
+      font-weight: 500;
+    }
+    .title {
+      color: #85afe0;
+    }
+
+    max-width: 16rem;
+    > * {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    font-weight: 300;
+  }
+  .third-col {
+    font-size: 1.12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > * {
+      text-align: center;
+    }
+
+    .time {
+    }
+    .date {
+      color: white;
+    }
+  }
+  &.active {
+    cursor: default;
+    background-color: rgba($color: #fff, $alpha: 0.15);
+    .first-col,
+    .second-col,
+    .third-col {
+      font-weight: 500;
+      .title {
+        color: white;
+      }
+    }
+  }
+
+  &.reed:not(.active) {
+    opacity: 0.5;
+  }
+}
