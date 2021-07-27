@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serverUrl: 'http://localhost:5000/api/v1',
+  cookieName: 'portfolio-panel-token',
+  cookieExpDays: 30
 };
 
 /*

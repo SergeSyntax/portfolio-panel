@@ -1,0 +1,41 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.056rem 1.76rem;
+  background: #242424;
+
+  &__menu {
+    background-color: transparent;
+    margin-right: 0.96rem;
+    color: white;
+
+    &:hover {
+      background: radial-gradient(rgba(#d7e1ec, 0.2), rgba(#ffffff, 0.2));
+    }
+  }
+
+  &__logo {
+    font-size: 2.72rem;
+    // font-size: 1.1em;
+    font-weight: 400;
+    // letter-spacing: 0.1em;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+
+    &--green {
+      color: #008013;
+    }
+  }
+
+  &__logout-button {
+    color: white;
+    background: transparent;
+    margin-left: auto;
+    padding-left: 0.32rem;
+
+    &:hover {
+      background: radial-gradient(rgba(#d7e1ec, 0.2), rgba(#ffffff, 0.2));
+    }
+  }
+}

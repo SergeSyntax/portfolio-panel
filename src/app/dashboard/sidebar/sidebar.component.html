@@ -1,0 +1,65 @@
+<div class="sidebar">
+  <mat-selection-list class="menu"
+                      [multiple]="false">
+    <div mat-subheader>Project Requests</div>
+    <mat-divider></mat-divider>
+
+    <mat-list-option [routerLink]="'/dashboard/charitable'"
+                     routerLinkActive="mat-list-single-selected-option">
+      <mat-list-item>
+        <mat-icon mat-list-icon>free_breakfast</mat-icon>
+        <div mat-line>Charitable</div>
+      </mat-list-item>
+    </mat-list-option>
+    <mat-list-option [routerLink]="'/dashboard/profitable'"
+                     routerLinkActive="mat-list-single-selected-option">
+      <mat-list-item>
+        <mat-icon mat-list-icon>attach_money</mat-icon>
+        <div mat-line>Profitable</div>
+      </mat-list-item>
+    </mat-list-option>
+    <br />
+    <div mat-subheader>Website Data</div>
+    <mat-divider></mat-divider>
+
+    <mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>attach_file</mat-icon>
+        <div mat-line>Projects</div>
+      </mat-list-item>
+    </mat-list-option>
+
+    <mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>event_note</mat-icon>
+        <div mat-line>Events</div>
+      </mat-list-item>
+    </mat-list-option>
+
+    <mat-list-option>
+      <mat-list-item>
+        <mat-icon mat-list-icon>people</mat-icon>
+        <div mat-line>Profiles</div>
+      </mat-list-item>
+    </mat-list-option>
+
+    <br />
+    <div mat-subheader>Options</div>
+    <mat-divider></mat-divider>
+
+    <mat-list-option [routerLink]="'/dashboard/accounts'"
+                     routerLinkActive="mat-list-single-selected-option">
+      <mat-list-item>
+        <mat-icon mat-list-icon>vpn_key</mat-icon>
+        <div mat-line>Accounts</div>
+      </mat-list-item>
+    </mat-list-option>
+  </mat-selection-list>
+  <button *ngIf="false"
+          mat-raised-button
+          type="submit"
+          class="compose_button"
+          mat-raised-button>
+    <mat-icon>create_new_folder</mat-icon>New
+  </button>
+</div>

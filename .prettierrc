@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "printWidth": 100,
+  "trailingComma": "none",
+  "html.format.wrapAttributes": "force-aligned"
+}

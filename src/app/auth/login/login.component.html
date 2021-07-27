@@ -1,0 +1,56 @@
+<div class="login">
+  <!-- Header -->
+  <auth-header-login></auth-header-login>
+  <div class="login__content">
+    <!-- Form -->
+    <form class="form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()">
+      <!-- Email field -->
+      <mat-form-field appearance="outline">
+
+        <mat-icon class="prefixed_icon"
+                  matPrefix>alternate_email</mat-icon>
+        <mat-label> Email </mat-label>
+
+        <input id="login__email"
+               formControlName="email"
+               matInput
+               placeholder="i.e. example@example.com" />
+
+        <mat-error *ngIf="isInvalid('email')">{{
+          getErrorMessage('email')
+        }}</mat-error>
+
+      </mat-form-field>
+      <!-- Password Field -->
+      <mat-form-field appearance="outline">
+
+        <mat-icon class="prefixed_icon"
+                  matPrefix>lock_outline</mat-icon>
+        <mat-label><span>Password</span></mat-label>
+
+        <input id="login__password"
+               formControlName="password"
+               matInput
+               placeholder="i.e. example@!%$5475347"
+               [type]="hide ? 'password' : 'text'" />
+
+        <!-- toggle password visibility button -->
+        <button type="button"
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="isInvalid('password')">{{
+          getErrorMessage(('password'))
+        }}</mat-error>
+      </mat-form-field>
+      <!-- Submit button -->
+      <auth-submit-button [inProgress]="inProgress"></auth-submit-button>
+    </form>
+  </div>
+</div>

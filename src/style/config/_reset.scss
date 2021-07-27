@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+
+  @media screen and (max-width: 900px) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 56.25%;
+  }
+
+  @media screen and (min-width: 1800px) {
+    font-size: 75%;
+  }
+}
+
+a {
+  color: inherit;
+}

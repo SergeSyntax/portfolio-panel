@@ -1,0 +1,22 @@
+@import 'utilities/variables';
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// typography configuration
+@import 'config/typography';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($custom-typography);
+// theme / palette configurations
+@import 'utilities/palette';
+@import 'theme';
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($admin-panel-theme);
+
+// material angular components rewrite
+@import 'config/reset';
+@import 'components/mat-icon';
+@import 'components/mat-progress-bar';

@@ -1,0 +1,14 @@
+<div class="actions">
+  <button [disabled]="inProgress"
+          type="submit"
+          class="submit-button"
+          color="primary"
+          mat-raised-button
+          style="position: relative">
+    Log In
+    <span class="spinner-wrapper">
+      <mat-spinner [ngClass]="{ hide: !inProgress }"
+                   [diameter]="25"></mat-spinner>
+    </span>
+  </button>
+</div>

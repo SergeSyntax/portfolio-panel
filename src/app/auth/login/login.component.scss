@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+@import '/src/style/utilities/palette';
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 30rem;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 40px;
+    color: #7f7f7f;
+    mat-error {
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding: 0;
+    }
+    mat-form-field {
+      margin-bottom: 1rem;
+      &.mat-focused:not(.mat-form-field-invalid) {
+        mat-icon.prefixed_icon {
+          color: mat-color($panel-primary, 500);
+        }
+      }
+
+      &.mat-form-field-invalid {
+        mat-icon.prefixed_icon {
+          color: mat-color($mat-red, 500);
+        }
+      }
+    }
+  }
+}
+
+// $panel-primary:
+// $panel-accent: (
+
+// $panel-warn: (

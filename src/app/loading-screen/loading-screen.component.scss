@@ -1,0 +1,46 @@
+@import '../../style/utilities/variables';
+
+.loading {
+  background: #242424;
+  z-index: 2;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &__spinner {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-top: 0.5rem solid $primary-color;
+    border-bottom: 0.5rem solid $primary-color;
+    animation: spin 1s linear infinite;
+    border-radius: 100%;
+  }
+  &__logo {
+    font-size: 1.7rem;
+    // font-size: 1.1em;
+    font-weight: 400;
+    // letter-spacing: 0.1em;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+
+    &--green {
+      color: $primary-color;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

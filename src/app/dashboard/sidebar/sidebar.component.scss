@@ -1,0 +1,59 @@
+.sidebar {
+  background: #242424;
+  // width: 16rem;
+  height: 100%;
+
+  .compose {
+    &_button {
+      border-radius: 10rem;
+      margin: 2rem;
+      padding: 0.5rem 2rem;
+    }
+  }
+
+  .menu {
+    // mat-list-option {
+    //   padding-left: 2rem;
+    // }
+    // .mat-line {
+    //   font-size: 1rem;
+    //   font-weight: 300;
+    //   letter-spacing: 0.03rem;
+    //   padding-left: 2.35rem;
+    // }
+  }
+  // mat-selection-list {
+  //   padding: 0;
+  // }
+
+  // &__options__primary {
+
+  // padding: 0.9rem 0;
+  // cursor: pointer;
+  // display: flex;
+  // // justify-content: center;
+  // align-items: center;
+  // font-size: 1.06rem;
+  // letter-spacing: 0.03rem;
+  // font-weight: 500;
+  // mat-icon {
+  //   margin: 0 0.6rem;
+  //   margin-left: 1.3rem;
+  //   // margin-bottom: 0.2rem;
+  // }
+  // &:hover {
+  //   background: rgba($color: white, $alpha: 0.06);
+  // }
+}
+
+// &__options__secondary {
+// letter-spacing: 0.03rem;
+
+// }
+
+// mat-icon {
+//   color: #b0b0b0;
+//   font-size: 1.2em;
+// }
+//   }
+// }

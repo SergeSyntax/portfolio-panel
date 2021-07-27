@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar">
+<!-- the sidebar is present on large screen then the button should be hidden -->
+  <button
+    *ngIf="!isSmallScreen"
+    mat-mini-fab
+    class="toolbar__menu"
+    aria-label="Example icon-button with menu icon"
+    (click)="openMenu()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <div class="toolbar__logo"><span class="toolbar__logo--green">sergey</span>:panel</div>
+  
+  <button
+    (click)="logout()"
+    mat-mini-fab
+    class="toolbar__logout-button"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
