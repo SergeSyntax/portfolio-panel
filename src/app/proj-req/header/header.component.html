@@ -1,5 +1,5 @@
 <mat-menu [xPosition]="'before'" #menu="matMenu">
-  <button *ngFor="let item of matMenuItems" mat-menu-item>
+  <button *ngFor="let item of matMenuItems" mat-menu-item (click)="onDelete();">
     <mat-icon>{{ item.icon }}</mat-icon>
     <span>{{ item.title }}</span>
   </button>

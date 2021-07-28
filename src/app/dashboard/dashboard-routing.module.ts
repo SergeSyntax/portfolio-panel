@@ -16,11 +16,11 @@ const routes: Routes = [
         path: 'profitable',
         loadChildren: () =>
           import('../profit-proj-req/profit-proj-req.module').then(mod => mod.ProfitProjReqModule)
+      },
+      {
+        path: 'accounts',
+        loadChildren: () => import('../user/user.module').then(m => m.UserModule)
       }
-      // {
-      //   path: 'accounts',
-      //   loadChildren: () => import('../users/users.module').then(m => m.UsersModule)
-      // }
     ]
   }
 ];

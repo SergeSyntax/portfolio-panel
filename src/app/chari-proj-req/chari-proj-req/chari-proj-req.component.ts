@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChariProjReq } from '../chari-proj-req';
-import { ChariProjReqService } from '../chari-proj-req.service';
+import { ChariProjEvents, ChariProjReqService } from '../chari-proj-req.service';
 
 @Component({
   selector: 'chari-proj-req',
@@ -10,9 +10,13 @@ import { ChariProjReqService } from '../chari-proj-req.service';
 })
 export class ChariProjReqComponent implements OnInit {
   chariProjReqs: ChariProjReq[] = [];
-  currentId = '';
+  currentId!: string;
   loading = true;
-  constructor(private chariProjReqService: ChariProjReqService, private route: ActivatedRoute) {}
+  constructor(
+    private chariProjReqService: ChariProjReqService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.chariProjReqService.getPlural().subscribe(chariProjReqs => {
@@ -22,6 +26,15 @@ export class ChariProjReqComponent implements OnInit {
 
     this.route.firstChild?.params.subscribe(({ id }) => {
       this.currentId = id;
+    });
+
+    this.chariProjReqService.$chariProjEvent.subscribe(event => {
+      console.log(this.currentId);
+
+      if (event === ChariProjEvents.DELETE) {
+        this.chariProjReqs = this.chariProjReqs.filter(item => item.id !== this.currentId);
+        this.router.navigateByUrl('/dashboard/charitable');
+      }
     });
   }
 

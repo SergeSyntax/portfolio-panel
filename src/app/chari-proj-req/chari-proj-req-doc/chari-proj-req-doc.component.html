@@ -2,7 +2,7 @@
 <proj-req-loading-doc *ngIf="loading"></proj-req-loading-doc>
 <div *ngIf="!loading && !failed"
      class="document">
-  <proj-req-header [projectRequest]="chariProjReq"></proj-req-header>
+  <proj-req-header (emitDelete)="onDelete($event)" [projectRequest]="chariProjReq"></proj-req-header>
   <div class="document__content">
     <proj-req-section [title]="'about'"
                           [data]="chariProjReq.about"></proj-req-section>

@@ -54,4 +54,10 @@ export class ChariProjReqDocComponent implements OnInit {
           });
       });
   }
+
+  onDelete(id: string) {
+    this.chariProjReqService.deleteSingular(id).subscribe({
+      next: () => {}
+    });
+  }
 }

@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { pluck } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { pluck, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ChariProjReq } from './chari-proj-req';
 
@@ -15,11 +16,19 @@ export interface ChariProjReqSingularResponse {
   status: string;
 }
 
+export enum ChariProjEvents {
+  DELETE
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ChariProjReqService {
   baseUrl = environment.serverUrl + '/charitableProjectReqs';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  $chariProjEvent = new Subject<ChariProjEvents>();
 
   constructor(private http: HttpClient) {}
 
@@ -35,5 +44,15 @@ export class ChariProjReqService {
     return this.http
       .get<ChariProjReqSingularResponse>(`${this.baseUrl}/${id}`)
       .pipe(pluck('charitableProjectRequest'));
+  }
+
+  deleteSingular(id: string): Observable<void> {
+    const url = `${this.baseUrl}/${id}`;
+
+    return this.http.delete<void>(url, this.httpOptions).pipe(
+      tap(() => {
+        this.$chariProjEvent.next(ChariProjEvents.DELETE);
+      })
+    );
   }
 }

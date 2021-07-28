@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 
 interface ProjectRequest {
@@ -21,6 +22,8 @@ interface MatMenuItem {
 })
 export class HeaderComponent implements OnInit {
   @Input() projectRequest!: ProjectRequest;
+  @Output() emitDelete = new EventEmitter<string>();
+
   constructor() {}
   matMenuItems: MatMenuItem[] = [{ title: 'delete', icon: 'delete', url: '' }];
   ngOnInit(): void {}
@@ -28,5 +31,9 @@ export class HeaderComponent implements OnInit {
   getRelativeTime(date: string) {
     const d = Date.parse(date);
     return moment(d).fromNow();
+  }
+
+  onDelete() {
+    this.emitDelete.emit();
   }
 }
